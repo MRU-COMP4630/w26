@@ -45,7 +45,7 @@ impl Preprocessor for Marp {
 // ANCHOR: process_marp_header
 fn process_marp_header(chapter: &mut Chapter) -> Result<String> {
     // check if it's actually a marp file
-    if chapter.content...
+    // if chapter.content...
 
     let mut buf = String::with_capacity(chapter.content.len());
 
