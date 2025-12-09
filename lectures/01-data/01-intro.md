@@ -11,14 +11,14 @@ _class: invert lead
 _paginate: skip
  -->
 
-# Welcome to Machine Learning!
+## Welcome to Machine Learning!
 
 COMP 4630 | Winter 2025
 Charlotte Curtis
 
 ---
 
-# What is this course about?
+## What is this course about?
 * Continuing the supervised/unsupervised learning algorithms from COMP 3652, with a focus on **Neural Networks**
 * First half: the history, theory, and math behind neural networks
 * Second half: applications of NNs in computer vision, natural language processing, and more
@@ -32,12 +32,12 @@ Charlotte Curtis
 
 ---
 
-# How did I get involved with ML?
+## How did I get involved with ML?
 ![center w:900px](../figures/charlotte-timeline.svg)
 
 ---
 
-# What do you want to learn about ML?
+## What do you want to learn about ML?
 
 <div style="text-align: center; font-size: 5em;">
 
@@ -47,16 +47,16 @@ Charlotte Curtis
 
 ---
 
-# Grade Assessment
+## Grade Assessment
 
 <div class="columns">
 
-| Component | Weight |
-|-----------|--------|
-| Assignments | 3 x 10% |
-| Midterm (theory) exam | 20% |
-| Journal club | 15% |
-| Final project | 35% |
+| Component             | Weight  |
+| --------------------- | ------- |
+| Assignments           | 3 x 10% |
+| Midterm (theory) exam | 20%     |
+| Journal club          | 15%     |
+| Final project         | 35%     |
 
 Bonus marks may be awarded for *substantial* corrections to materials, submitted as pull requests
 
@@ -66,7 +66,7 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
 
 ---
 
-# Textbooks and other readings
+## Textbooks and other readings
 
 Primary Textbook:
 - [Hands on Machine Learning with Scikit-Learn and Tensorflow](https://ebookcentral.proquest.com/lib/mtroyal-ebooks/detail.action?docID=30168989)
@@ -80,7 +80,7 @@ Journal club list:
 
 ---
 
-# Machine Learning Project Checklist
+## Machine Learning Project Checklist
 
 <div style="font-size: 0.9em;">
 
@@ -101,7 +101,7 @@ Journal club list:
 
 ---
 
-# 1. Look at the big picture
+## 1. Look at the big picture
 
 Example Dataset: California housing prices (1990)
 
@@ -114,7 +114,7 @@ Example Dataset: California housing prices (1990)
 
 ---
 
-# 2. Get the data
+## 2. Get the data
 
 For this class, we'll use readily available datasets. Some sources are:
 - [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
@@ -132,7 +132,7 @@ After fetching the data, set aside a test set and **don't look at it**.
 
 ---
 
-# 2a. Set aside a test set
+## 2a. Set aside a test set
 ❓ Discussion questions: 
 - Why do we need an independent test set?
     - Avoid data snooping bias
@@ -144,7 +144,7 @@ After fetching the data, set aside a test set and **don't look at it**.
 
 ---
 
-# Side tangent: Sampling bias
+## Side tangent: Sampling bias
 
 - Simple example: assume 80% of population likes cilantro
 - Goal: ensure our sample is representative of the population, $\pm 5\%$
@@ -155,7 +155,7 @@ $$P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}, \mathrm{where} \binom{n}{k} = \frac{n!}
 
 ---
 
-# Side tangent: Sampling bias continued
+## Side tangent: Sampling bias continued
 
 $P(X = k)$ is the probability mass function, and the corresponding cumulative distribution function is just the sum up to $k$:
 
@@ -167,7 +167,7 @@ By adding together $P(X \leq 0.8 - 0.05)$ and $P(X \geq 0.8 + 0.05)$, we get the
 
 ---
 
-# 3. Explore the data
+## 3. Explore the data
 ❓ Discussion questions: 
 * What do you notice about the data?
 * Do the values make sense for the labels?
@@ -176,7 +176,7 @@ By adding together $P(X \leq 0.8 - 0.05)$ and $P(X \geq 0.8 + 0.05)$, we get the
 
 ---
 
-# 3a. Look for correlations
+## 3a. Look for correlations
 The [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) is a measure of the linear correlation between two variables $X$ and $Y$ (commonly denoted as $r$):
 
 $$r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}$$
@@ -188,7 +188,7 @@ where $\bar{x}$ and $\bar{y}$ are the sample means of $X$ and $Y$, respectively.
 
 ---
 
-# 4. Prepare the data
+## 4. Prepare the data
 General goals:
 - Handle missing data, and maybe outliers
 - Drop irrelevant features
@@ -198,13 +198,13 @@ General goals:
 
 ---
 
-# 4a. Handling missing data
+## 4a. Handling missing data
 In the book 3 options are listed to handle the NaN values:
 
 ```python
-housing.dropna(subset=["total_bedrooms"], inplace=True) # option 1
-housing.drop("total_bedrooms", axis=1)                  # option 2
-median = housing["total_bedrooms"].median()             # option 3
+housing.dropna(subset=["total_bedrooms"], inplace=True) ## option 1
+housing.drop("total_bedrooms", axis=1)                  ## option 2
+median = housing["total_bedrooms"].median()             ## option 3
 housing["total_bedrooms"].fillna(median, inplace=True)
 ```
 
@@ -215,7 +215,7 @@ housing["total_bedrooms"].fillna(median, inplace=True)
 
 ---
 
-# 4b. Handling non-numeric data
+## 4b. Handling non-numeric data
 Most of the math in ML algorithms is based on numbers, so we need to convert text and categorical attributes to numbers. This is called **encoding**.
 
 ❓ Discussion questions:
@@ -225,7 +225,7 @@ Most of the math in ML algorithms is based on numbers, so we need to convert tex
 
 ---
 
-# 4c. Scaling the data
+## 4c. Scaling the data
 Many ML algorithms don't like features with vastly different scales. Common scaling methods are **min-max scaling** and **standardization**.
 
 > Important: scaling is **computed** on the training set and **applied** to the validation and test sets - they are not scaled independently!
@@ -238,7 +238,7 @@ Many ML algorithms don't like features with vastly different scales. Common scal
 
 ---
 
-# 4e. Standardization details
+## 4e. Standardization details
 
 A general Gaussian distribution is given by:
 
@@ -252,7 +252,7 @@ $$ f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} x^2} $$
 
 ---
 
-# 4f. Other transformations
+## 4f. Other transformations
 - **Log transformation**: useful for data that is heavily skewed
 - Also **square root, squaring, etc.**: try to remove heavy tails
 - **Feature engineering**: combining features to create new ones
