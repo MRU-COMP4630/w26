@@ -7,6 +7,9 @@ use pulldown_cmark::{
 };
 use regex::Regex;
 use std::io;
+use std::sync::LazyLock;
+
+static MARP_REGEX: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"marp:\s*true").unwrap());
 
 fn main() {
     let mut args = std::env::args().skip(1);
@@ -41,14 +44,20 @@ impl Preprocessor for Marp {
                 Some(_) => {
                     let lec_num = ch.number.as_ref().unwrap().first().unwrap();
                     format!("Lecture {}: {}", lec_num, ch.name)
-                },
+                }
                 None => ch.name.clone(),
             };
 
             match process_marp_header(
                 &ch.content,
                 &title,
-                ch.source_path.as_ref().unwrap().file_stem().unwrap().to_str().unwrap(),
+                ch.source_path
+                    .as_ref()
+                    .unwrap()
+                    .file_stem()
+                    .unwrap()
+                    .to_str()
+                    .unwrap(),
             ) {
                 Ok(s) => {
                     if !s.is_empty() {
@@ -62,11 +71,21 @@ impl Preprocessor for Marp {
     }
 }
 
+fn link_event<'a>(events: &mut Vec<Event<'a>>, text: &'a str, url: &'a str) {
+    events.push(Event::Start(Tag::Link {
+        link_type: LinkType::Inline,
+        dest_url: CowStr::Borrowed(url),
+        title: CowStr::Borrowed(""),
+        id: CowStr::Borrowed(""),
+    }));
+    events.push(Event::Text(CowStr::Borrowed(text)));
+    events.push(Event::End(TagEnd::Link));
+}
+
 // ANCHOR: process_marp_header
 fn process_marp_header(content: &String, title: &str, filename: &str) -> Result<String> {
     // check if it's actually a marp file
-    let marp_true = Regex::new(r"marp:\s*true").unwrap();
-    if !marp_true.is_match(content.as_str()) {
+    if !MARP_REGEX.is_match(content) {
         return Ok(String::new());
     }
 
@@ -77,50 +96,28 @@ fn process_marp_header(content: &String, title: &str, filename: &str) -> Result<
     let pdf_target = format!("../pdfs/{}.pdf", &filename);
 
     for event in Parser::new_ext(&content, Options::all()) {
-        if event == Event::Start(Tag::MetadataBlock(MetadataBlockKind::YamlStyle)) {
-            in_header = true;
-        }
+        match &event {
+            Event::Start(Tag::MetadataBlock(MetadataBlockKind::YamlStyle)) => in_header = true,
+            Event::End(TagEnd::MetadataBlock(MetadataBlockKind::YamlStyle)) => {
+                in_header = false;
+                // add the page heading
+                events.push(Event::Start(Tag::Heading {
+                    level: HeadingLevel::H1,
+                    id: None,
+                    classes: vec![],
+                    attrs: vec![],
+                }));
 
-        // remove the header for now, but might want to look for specific values
-        if !in_header {
-            events.push(event.clone());
-        }
+                events.push(Event::Text(CowStr::Borrowed(title)));
+                events.push(Event::End(TagEnd::Heading(HeadingLevel::H1)));
 
-        if event == Event::End(TagEnd::MetadataBlock(MetadataBlockKind::YamlStyle)) {
-            in_header = false;
-
-            // add the page heading
-            events.push(Event::Start(Tag::Heading {
-                level: HeadingLevel::H1,
-                id: None,
-                classes: vec![],
-                attrs: vec![],
-            }));
-
-            events.push(Event::Text(CowStr::Borrowed(title)));
-            events.push(Event::End(TagEnd::Heading(HeadingLevel::H1)));
-
-            // add the link to the html slides
-            events.push(Event::Start(Tag::Link {
-                link_type: LinkType::Inline,
-                dest_url: CowStr::Borrowed(&slide_target),
-                title: CowStr::Borrowed(""),
-                id: CowStr::Borrowed(""),
-            }));
-            events.push(Event::Text(CowStr::Borrowed("HTML Slides")));
-            events.push(Event::End(TagEnd::Link));
-            events.push(Event::Text(CowStr::Borrowed(" | ")));
-
-            // and the pdf slides
-            events.push(Event::Start(Tag::Link {
-                link_type: LinkType::Inline,
-                dest_url: CowStr::Borrowed(&pdf_target),
-                title: CowStr::Borrowed(""),
-                id: CowStr::Borrowed(""),
-            }));
-            events.push(Event::Text(CowStr::Borrowed("PDF Slides")));
-            events.push(Event::End(TagEnd::Link));
-            events.push(Event::SoftBreak);
+                // add the links to the html and pdf slides
+                link_event(&mut events, "HTML Slides", &slide_target);
+                events.push(Event::Text(CowStr::Borrowed(" | ")));
+                link_event(&mut events, "PDF Slides", &pdf_target);
+            }
+            _ if !in_header => events.push(event),
+            _ => {}
         }
     }
 
@@ -158,6 +155,9 @@ mod tests {
         let contents = "---\nmarp: true\n---\n# Fake Title\n";
         let result = process_marp_header(&contents.to_string(), "Test", "something/there.md");
         assert!(!result.is_err());
-        assert_eq!(result.unwrap().trim(), "# Test\n\n[HTML Slides](../slides/something/there.md.html) | [PDF Slides](../pdfs/something/there.md.pdf)\n# Fake Title");
+        assert_eq!(
+            result.unwrap().trim(),
+            "# Test\n\n[HTML Slides](../slides/something/there.md.html) | [PDF Slides](../pdfs/something/there.md.pdf)\n# Fake Title"
+        );
     }
 }
