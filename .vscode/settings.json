@@ -2,5 +2,8 @@
     "markdown.marp.enableHtml": true,
     "markdown.marp.themes": [
         "lectures/marp-theme.css"
+    ],
+    "rust-analyzer.linkedProjects": [
+        "crates/mdbook-marp/Cargo.toml"
     ]
 }

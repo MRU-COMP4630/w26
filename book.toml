@@ -4,12 +4,14 @@ authors = ["Charlotte Curtis"]
 description = "Machine Learning for CS at MRU"
 src = "."
 
+
 [output.html]
 sidebar-header-nav = true
+no-section-label = true 
 
 # Use katex for math instead of broken mathjax
-[preprocessor.katex]
-after = ["links"]
+# [preprocessor.katex]
+# after = ["links"]
 
 # strip yaml front matter (from marp md)
 [preprocessor.marp]
