@@ -162,7 +162,7 @@ $P(X = k)$ is the probability mass function, and the corresponding cumulative di
 
 $$P(X \leq k) = \sum_{i=0}^k \binom{n}{i}p^i(1-p)^{n-i}$$
 
-By adding together $P(X \leq 0.8 - 0.05)$ and $P(X \geq 0.8 + 0.05)$, we get the probability of sampling bias (by the $\pm 5\%$ definition).
+Suppose we **randomly** sample 100 people. What is the probability of fewer than 75 or more than 85 cilantro lovers?
 
 > This is also my excuse to review some probability theory and notation
 
