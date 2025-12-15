@@ -84,7 +84,7 @@ _class: code_reminder
 
 - Yes, AI can do a lot of what I'm asking for in this course
 - No, I do not want to read about what AI "thinks"
-- :question: What do you think is an appropriate use?
+- ❓ What do you think is an appropriate use?
 
 ---
 
