@@ -38,7 +38,13 @@ impl Preprocessor for Marp {
         "marp"
     }
 
-    fn run(&self, _ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
+    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
+        let semester = match ctx.config.get::<String>("preprocessor.marp.semester") {
+            Ok(Some(sem)) => sem,
+            Ok(None) => String::new(),
+            Err(e) => return Err(e),
+        };
+
         book.for_each_chapter_mut(|ch| {
             let title = format!("Lecture {}", ch.name.replace(".", ":"));
 
@@ -50,6 +56,7 @@ impl Preprocessor for Marp {
                     .and_then(|p| p.file_stem())
                     .and_then(|s| s.to_str())
                     .unwrap(),
+                &semester,
             ) {
                 Ok(s) => {
                     if !s.is_empty() {
@@ -63,7 +70,7 @@ impl Preprocessor for Marp {
     }
 }
 
-fn link_event<'a>(events: &mut Vec<Event<'a>>, text: &'a str, url: &'a str) {
+fn link_event<'a>(events: &mut Vec<Event<'a>>, text: &'a str, url: &'a str, semester: &str) {
     events.push(Event::Start(Tag::Link {
         link_type: LinkType::Inline,
         dest_url: url.into(),
@@ -72,15 +79,15 @@ fn link_event<'a>(events: &mut Vec<Event<'a>>, text: &'a str, url: &'a str) {
     }));
     
     let img_ref = if text.contains("PDF") {
-        Some("/lectures/figures/file-type-pdf.svg")
+        Some("file-type-pdf.svg")
     } else if text.contains("HTML") {
-        Some("/lectures/figures/osc-presenter.svg")
+        Some("osc-presenter.svg")
     } else {
         None
     };
 
     if img_ref.is_some() {
-        events.push(Event::Html(format!("<img src=\"{}\" style=\"height:1em;\" /> ",img_ref.unwrap()).into()));
+        events.push(Event::Html(format!("<img src=\"{semester}/lectures/figures/{}\" style=\"height:1em;\" /> ",img_ref.unwrap()).into()));
     }
     events.push(Event::Text(text.into()));
 
@@ -89,7 +96,7 @@ fn link_event<'a>(events: &mut Vec<Event<'a>>, text: &'a str, url: &'a str) {
 }
 
 // ANCHOR: process_marp_header
-fn process_marp_header(content: &String, title: &str, filename: &str) -> Result<String> {
+fn process_marp_header(content: &String, title: &str, filename: &str, semester: &str) -> Result<String> {
     // check if it's actually a marp file
     if !MARP_REGEX.is_match(content) {
         return Ok(String::new());
@@ -98,8 +105,8 @@ fn process_marp_header(content: &String, title: &str, filename: &str) -> Result<
     let mut events = vec![];
     let mut in_header = false;
 
-    let slide_target = format!("/lectures/slides/{}.html", &filename);
-    let pdf_target = format!("/lectures/pdfs/{}.pdf", &filename);
+    let slide_target = format!("{semester}/lectures/slides/{}.html", &filename);
+    let pdf_target = format!("{semester}/lectures/pdfs/{}.pdf", &filename);
 
     for event in Parser::new_ext(&content, Options::all()) {
         match &event {
@@ -118,12 +125,12 @@ fn process_marp_header(content: &String, title: &str, filename: &str) -> Result<
                 events.push(Event::End(TagEnd::Heading(HeadingLevel::H1)));
 
                 // add the links to the html and pdf slides
-                link_event(&mut events, "HTML Slides", &slide_target);
+                link_event(&mut events, "HTML Slides", &slide_target, semester);
                 events.push(Event::Text(" | ".into()));
-                link_event(&mut events, "PDF Slides", &pdf_target);
+                link_event(&mut events, "PDF Slides", &pdf_target, semester);
             }
             Event::Start(Tag::Image { link_type, dest_url, title, id }) => {
-                let new_url = dest_url.clone().into_string().replace("../", "/lectures/");
+                let new_url = dest_url.clone().into_string().replace("../", &format!("{semester}/lectures/"));
                 events.push(Event::Start(Tag::Image {
                     link_type: *link_type,
                     dest_url: new_url.into(),
@@ -159,7 +166,7 @@ mod tests {
     #[test]
     fn no_marp() {
         let contents = "---\nmarp: false\n---\n# Fake Title\n";
-        let result = process_marp_header(&contents.to_string(), "Test", "something/there.md");
+        let result = process_marp_header(&contents.to_string(), "Test", "something/there.md", "/w26");
         assert!(!result.is_err());
         assert_eq!(result.unwrap(), "");
     }
@@ -167,11 +174,11 @@ mod tests {
     #[test]
     fn marp_present() {
         let contents = "---\nmarp: true\n---\n# Fake Title\n";
-        let result = process_marp_header(&contents.to_string(), "Test", "test");
+        let result = process_marp_header(&contents.to_string(), "Test", "test", "/w26");
         assert!(!result.is_err());
         assert_eq!(
             result.unwrap().trim(),
-            "# Test\n\n[HTML Slides](../slides/test.html) | [PDF Slides](../pdfs/test.pdf)\n# Fake Title"
+            "# Test\n\n[<img src=\"/w26/lectures/figures/osc-presenter.svg\" style=\"height:1em;\" /> HTML Slides](/w26/lectures/slides/test.html) | [<img src=\"/w26/lectures/figures/file-type-pdf.svg\" style=\"height:1em;\" /> PDF Slides](/w26/lectures/pdfs/test.pdf)# Fake Title"
         );
     }
 }

@@ -17,3 +17,4 @@ command = "cargo run --manifest-path=crates/mdbook-katex/Cargo.toml --locked"
 # strip yaml front matter (from marp md)
 [preprocessor.marp]
 command = "cargo run --manifest-path=crates/mdbook-marp/Cargo.toml --locked"
+semester = "w26/"
