@@ -50,14 +50,15 @@ Charlotte Curtis
 | --------------------- | ------- |
 | Assignments           | 3 x 10% |
 | Midterm (theory) exam | 20%     |
-| Journal club          | 15%     |
-| Final project         | 35%     |
+| Journal club          | 10%     |
+| Final project         | 40%     |
 
 Bonus marks may be awarded for *substantial* corrections to materials, submitted as pull requests
 
 </div>
 
 **Course materials repo**: https://github.com/mru-comp4630/w26
+**Rendered at**: https://mru-comp4630.github.io/w26/
 
 ---
 
@@ -66,7 +67,7 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
 Primary Textbook:
 - [Hands on Machine Learning with Scikit-Learn and [Tensorflow/PyTorch]](https://ebookcentral.proquest.com/lib/mtroyal-ebooks/detail.action?docID=30168989)
 - [Associated GitHub repo (Tensorflow)](https://github.com/ageron/handson-ml3)
-- [Associated GitHub repo (Tensorflow)](https://github.com/ageron/handson-mlp)
+- [Associated GitHub repo (PyTorch)](https://github.com/ageron/handson-mlp)
 
 More mathy details:
 - [Deep Learning](https://www.deeplearningbook.org/)

@@ -1,10 +1,10 @@
 # Journal Club
-Your 15% journal club mark consists of two components:
+Your 10% journal club mark consists of two components:
 - Reading each paper and participating in weekly discussions (5%)
-- Reading a single paper more thoroughly and presenting that paper (10%) 
+- Reading a single paper more thoroughly and presenting that paper (5%) 
 
 ## Presentation
-The week you have signed up to present, read the paper and prepare a (maximum) 10 minute presentation. You may use whatever file format you wish, and feel free to copy and paste relevant diagrams or quotes from the paper (a single citation at the start suffices for this purpose). If you include material from other resources, this must be cited as usual.
+The week you have signed up to present, read the paper and prepare a (maximum) 10 minute presentation. You may use whatever file format you wish, and feel free to copy and paste relevant diagrams or quotes from the paper (a single citation at the start suffices for this purpose). If you include material from other resources, these must be cited as usual.
 
 When creating your presentation, consider the following guiding questions. You don't need to use these headings specifically, and not every question applies to every paper, but it's a place to start.
 
