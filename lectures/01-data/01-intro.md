@@ -72,8 +72,7 @@ Primary Textbook:
 More mathy details:
 - [Deep Learning](https://www.deeplearningbook.org/)
 
-Journal club list:
-- [Journal Club Readings](/assignments/journal_club/README.md)
+Journal club list: on D2L under "Course Info" (requires MRU library login)
 
 ---
 

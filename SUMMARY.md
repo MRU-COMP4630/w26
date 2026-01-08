@@ -13,4 +13,5 @@
 --- 
 
 # Assignments
+<!-- - [Assignment 1](assignments/assignment1/README.md) -->
 <!-- - [Journal Club](assignments/journal_club/README.md) -->
