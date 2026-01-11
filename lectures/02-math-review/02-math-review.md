@@ -16,21 +16,12 @@ _paginate: skip
 COMP 4630 | Winter 2026
 Charlotte Curtis
 
----
-
-## But first, some stuff about assessments
-- [Assignment 1](../../assignments/assignment1.md)
-- [Journal club guidelines](../../assignments/journal_club.md)
-- [Example](https://arxiv.org/abs/1503.03585) of a math-heavy paper
-- Additional references for papers:
-    - [Google Scholar](https://scholar.google.com/)
-    - [ArXiv](https://arxiv.org/)
 
 ---
 
 ## Math review
-- MATH 1200: Differential calculus
 - MATH 1203: Linear algebra
+- MATH 1200: Differential calculus
 - MATH 2234: Statistics
 
 Further reading: 
@@ -112,6 +103,10 @@ Notation: Element $a_{ij}$ is in row $i$, column $j$, also written as $A_{ij}$.
 
 ---
 
+<!-- 
+_class: code_reminder
+-->
+
 ## Matrix multiplication examples
 Matrix times a matrix:
 $$A = \begin{bmatrix} 2 & 0 \\ 1 & 3 \\ -4 & 5 \end{bmatrix}, B = \begin{bmatrix} -1 & 0 & 1 \\ 1 & 3 & 7\end{bmatrix}$$
@@ -137,6 +132,10 @@ $$A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \mathbf{v} = \begin{bmatrix
 </div>
 
 ---
+
+<!-- 
+_class: code_reminder
+-->
 
 ## Calculus: Notation
 The **derivative** of a function $y = f(x)$ is represented as:
@@ -199,6 +198,10 @@ These are computed by holding the "other" variable(s) **constant**. For example,
 $$\dfrac{\partial y}{\partial x_1} = 2 + x_2, \dfrac{\partial y}{\partial x_2} = 1 + x_1$$
 
 ---
+
+<!-- 
+_class: code_reminder
+-->
 
 # A brief introduction to vector calculus
 Putting together partial derivatives with vectors and matrices we get:
@@ -279,6 +282,10 @@ $$\mathbf{J_f} = \begin{bmatrix} \nabla^T f_1 \\ \nabla^T f_2 \\ \vdots \\ \nabl
 
 ---
 
+<!-- 
+_class: code_reminder
+-->
+
 ## Covariance
 * The **covariance** between $f(\mathrm{x})$ and $g(\mathrm{y})$ gives a sense of how linearly related they are and how much they vary together:
     $$\mathrm{Cov}(f(\mathrm{x}), g(\mathrm{y})) = \mathbb{E}[(f(\mathrm{x}) - \mathbb{E}[f(\mathrm{x})])(g(\mathrm{y}) - \mathbb{E}[g(\mathrm{y})])]$$
@@ -305,3 +312,16 @@ Good "default choice" for two reasons:
 ---
 
 ![bg fit](../figures/02-normal_dist.png)
+
+---
+
+## Coming up next
+
+- Training (regression) models
+    - Linear regression
+    - Gradient descent
+- References and suggested reading:
+    - [Scikit-learn book](https://librarysearch.mtroyal.ca/discovery/fulldisplay?context=L&vid=01MTROYAL_INST:02MTROYAL_INST&search_scope=MRULibrary&isFrbr=true&tab=MRULibraryResources&docid=alma9923265933604656):
+        - Chapter 4: Training Models
+    - [Deep Learning Book](https://www.deeplearningbook.org/)
+        - Section 5.1.4: Linear Regression

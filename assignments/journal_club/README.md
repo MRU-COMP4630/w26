@@ -3,6 +3,8 @@ Your 10% journal club mark consists of two components:
 - Reading each paper and participating in weekly discussions (5%)
 - Reading a single paper more thoroughly and presenting that paper (5%) 
 
+The signup sheet is on D2L. You will need to be logged in to your MRU Google account to access it.
+
 ## Presentation
 The week you have signed up to present, read the paper and prepare a (maximum) 10 minute presentation. You may use whatever file format you wish, and feel free to copy and paste relevant diagrams or quotes from the paper (a single citation at the start suffices for this purpose). If you include material from other resources, these must be cited as usual.
 

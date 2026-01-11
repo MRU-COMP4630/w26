@@ -126,6 +126,24 @@ Example Dataset: California housing prices (1990)
 
 ---
 
+<!-- 
+_class: invert lead
+_paginate: skip
+ -->
+
+## Where we left off - Monday, January 12
+
+First, some stuff about assessments
+- [Assignment 1](../../assignments/assignment1.md)
+- [Journal club guidelines](../../assignments/journal_club.md)
+- [Example](https://arxiv.org/abs/1503.03585) of a math-heavy paper
+- Additional references for papers:
+    - [Google Scholar](https://scholar.google.com/)
+    - [ArXiv](https://arxiv.org/)
+
+
+---
+
 ## 2. Get the data
 
 For this class, we'll use readily available datasets. Some sources are:
@@ -272,3 +290,12 @@ $$ f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} x^2} $$
     - Possibly using K-means clustering
     - Relies on domain knowledge
 - Best to create a **transformation pipeline** and apply it to the data rather than saving the transformed data
+
+---
+
+## Coming up next
+- Math review:
+    - Linear algebra
+    - Differential calculus
+    - Statistics
+- A brief introduction to vector calculus
