@@ -134,8 +134,8 @@ _paginate: skip
 ## Where we left off - Monday, January 12
 
 First, some stuff about assessments
-- [Assignment 1](https://mru-comp4630.github.io/w26/assignments/assignment1.md)
-- [Journal club guidelines](https://mru-comp4630.github.io/w26/assignments/journal_club.md)
+- [Assignment 1](https://mru-comp4630.github.io/w26/assignments/assignment1)
+- [Journal club guidelines](https://mru-comp4630.github.io/w26/assignments/journal_club)
 - [Example](https://arxiv.org/abs/1503.03585) of a math-heavy paper
 - Additional references for papers:
     - [Google Scholar](https://scholar.google.com/)
