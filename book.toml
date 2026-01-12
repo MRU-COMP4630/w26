@@ -10,6 +10,10 @@ no-section-label = true
 git-repository-url = "https://github.com/mru-comp4630/w26"
 site-url = "/w26/"
 
+[output.html.fold]
+enable = true
+level = 0
+
 # Use katex for math instead of broken mathjax
 [preprocessor.katex]
 after = ["links"]
