@@ -116,6 +116,12 @@ $$A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \mathbf{v} = \begin{bmatrix
 
 ---
 
+<!-- _class: invert lead -->
+
+## Where we left off on January 14
+
+---
+
 ## Matrix transpose
 * **Transpose**: $A^T$ swaps rows and columns
     $$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, A^T = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$$

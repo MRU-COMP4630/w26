@@ -5,12 +5,13 @@
 # Lectures
 - [1. Data Exploration](lectures/01-data/01-intro.md)
 - [2. Math Review](lectures/02-math-review/02-math-review.md)
+- [3. Training models](lectures/03-training-models/03-training-models.md)
 
 ---
 
 # Tutorials
 - [1. Data Exploration](tutorials/01-data-exploration/README.md)
-<!-- - [2. Linear algebra and NumPy](tutorials/02-numpy/README.md) -->
+- [2. Linear algebra and NumPy](tutorials/02-numpy/README.md)
 
 --- 
 
