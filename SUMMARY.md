@@ -12,6 +12,7 @@
 # Tutorials
 - [1. Data Exploration](tutorials/01-data-exploration/README.md)
 - [2. Linear algebra and NumPy](tutorials/02-numpy/README.md)
+- [3. Gradient Descent](tutorials/03-gradient-descent/README.md)
 
 --- 
 
