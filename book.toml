@@ -17,7 +17,7 @@ level = 0
 # Use katex for math instead of broken mathjax
 [preprocessor.katex]
 after = ["links"]
-command = "cargo run --manifest-path=crates/mdbook-katex/Cargo.toml --locked"
+# command = "cargo run --manifest-path=crates/mdbook-katex/Cargo.toml --locked"
 
 # strip yaml front matter (from marp md)
 [preprocessor.marp]

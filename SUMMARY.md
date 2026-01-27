@@ -7,6 +7,7 @@
 - [2. Math Review](lectures/02-math-review/02-math-review.md)
 - [3. Training models](lectures/03-training-models/03-training-models.md)
 - [4. Backpropagation](lectures/04-backpropagation/04-backprop.md)
+- [5. Classification](lectures/05-classification/05-classification-loss-metrics.md)
 
 ---
 
