@@ -126,7 +126,7 @@ As usual, you don't always need a deep learning solution :hammer:
 ---
 
 ## Activation Functions for RNNs
-- The default activation function in tensorflow is `tanh`
+- The default activation function in tensorflow/PyTorch is `tanh`
 - :question: What is different about RNNs that might influence the choice of activation function?
 - :question: How might we normalize sequence data?
 
@@ -226,3 +226,17 @@ _paginate: skip
 - How RNNs are applied in NLP
 
 <footer>This slide written by GitHub Copilot in Winter 2025</footer>
+
+---
+
+## Preview: Natural Language Processing
+
+- NLP in 2026 is dominated by **large language models (LLMs)** like GPT-4o, Claude, and Gemini
+- Transformer-based architectures have largely **replaced RNNs** for most NLP tasks
+- Key capabilities of modern NLP systems:
+    - Multi-modal understanding (text, images, audio, video)
+    - Long-context reasoning (millions of tokens)
+    - Agentic behaviour: tool use, planning, and self-correction
+- :question: If transformers have replaced RNNs, why are we still studying them?
+
+<footer>This slide written by GitHub Copilot in Winter 2026</footer>
