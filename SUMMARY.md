@@ -11,6 +11,7 @@
 - [6. Modern Neural Networks](lectures/06-modern-nns/06-modern-nns.md)
 - [7. Convolutional Neural Networks](lectures/07-convolution/07-convolution.md)
 - [8. Recurrent Neural Networks](lectures/08-rnns/08-rnn.md)
+- [9. Natural Language Processing](lectures/09-nlp/09-nlp.md)
 
 ---
 
@@ -21,6 +22,7 @@
 - [4. Backpropagation](tutorials/04-mlp/README.md)
 - [5. Intro to PyTorch](tutorials/05-pytorch/README.md)
 - [6. Project Pitch Presentations](#)
+- [7. Recurrent Neural Networks](tutorials/07-rnn/README.md)
 
 --- 
 
