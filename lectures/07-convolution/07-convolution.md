@@ -149,7 +149,7 @@ $$\frac{1}{9}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{bmatrix}$$
 - :question: What if an object is shifted, rotated, or flipped within the image?
   ![h:200 center](../figures/07-bluey-shift.svg) 
 
-<footer>Bluey image used without permission from <a href="https://www.bluey.tv/">bluey.tv</a>
+<footer>Bluey image used without permission from <a href="https://www.bluey.tv/">bluey.tv</a></footer>
 
 ---
 
@@ -279,6 +279,8 @@ $$\frac{1}{9}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{bmatrix}$$
 - Key innovation: easier to learn "identity" functions ($f(x) = x$)
 - If a layer outputs 0, it doesn't kill the gradient
 - Even deeper, e.g. ResNet-152
+
+</div>
 
 <footer>Source: <a href="https://arxiv.org/abs/1512.03385">ResNet Paper</a></footer>
 
