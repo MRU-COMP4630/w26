@@ -29,6 +29,7 @@
 # Assignments
 - [Assignment 1](assignments/assignment1/README.md)
 - [Assignment 2](assignments/assignment2/README.md)
+- [Assignment 3](assignments/assignment3/README.md)
 - [Journal Club](assignments/journal_club/README.md)
 
 - [Final Project](final_project/README.md)
