@@ -225,7 +225,7 @@ _paginate: skip
     - :question: what are some potential drawbacks?
 - [ELMo](https://allennlp.org/elmo) was introduced in 2018 specifically to address the limitations of Word2Vec and GloVe (another popular embedding)
 
-<div style="font-size: 0.8em" data-marpit-fragment>
+<div style="font-size: 0.8em">
 
 > "Our representations differ from traditional word type embeddings in that each token is assigned a representation that is a function of the entire input sentence. We use vectors derived from a bidirectional LSTM that is trained with a coupled language model objective on a large text corpus" -- [Peters et al](https://arxiv.org/abs/1802.05365)
 
