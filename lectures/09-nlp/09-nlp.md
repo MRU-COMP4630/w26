@@ -177,6 +177,8 @@ General process:
 
 To [Colab](https://colab.research.google.com/drive/1ZJDWEBHavg02Mpi-xxw2mZh1Y8AfDtHA?usp=sharing)!
 
+> This is the process you'll be following for Assignment 3
+
 ---
 
 <!-- 
@@ -192,8 +194,7 @@ _paginate: skip
 ## Back to RNNs
 - RNNs predict the future based on the past
 - This is exactly what we want for predicting stock prices, weather, etc
-- :question: what if we want to predict the next word in a sentence?
-- :question: what about translating a sentence from one language to another?
+- :question: What about translating a sentence from one language to another?
     > Time flies like an arrow; fruit flies like a banana.
 - :question: Can you think of a way to get RNNs to see the future?
 
@@ -209,8 +210,6 @@ _paginate: skip
     \mathbf{\hat{y}}_t &= \mathbf{h}_t + \mathbf{g}_t
     \end{aligned}$$
 
-- :question: Drawbacks?
-
 
 ![bg right fit](../figures/09-bidir.png)
 
@@ -221,7 +220,6 @@ _paginate: skip
 ## Pretraining
 - Embeddings like Word2Vec have been trained on large corpora
 - Surely this provides a great starting point for our models!
-    - :question: why might we want to use pretrained embeddings?
     - :question: what are some potential drawbacks?
 - [ELMo](https://allennlp.org/elmo) was introduced in 2018 specifically to address the limitations of Word2Vec and GloVe (another popular embedding)
 
@@ -245,6 +243,8 @@ _paginate: skip
 ---
 
 ## Machine Translation
+<!-- _class: code_reminder -->
+
 | English | Spanish |
 |---------|---------|
 | My mother did nothing but weep | Mi madre no hizo nada sino llorar | 
@@ -253,7 +253,6 @@ _paginate: skip
 | I have never eaten a mango before | Nunca he comido un mango |
 
 - :question: What kind of challenges can you think of?
-- :question: How might you approach this problem?
 
 <!-- Challenges: different word order and length, special characters, grammar, idioms, etc -->
 <!-- Approach: Intermediate representation -->
@@ -265,8 +264,6 @@ _paginate: skip
 - RNNs can convert a fixed length **vector** into an arbitrary length **sequence**
 - Why not use two RNNs to convert a **sequence** to a **sequence**?
 - The output head is a softmax layer with one node for **each word** in the target vocabulary $\mathbb{V}$
-    - :question: What problems can you think of with this approach?
-    - :question: How might you address these problems?
 
 <!-- As vocab grows, softmax is very slow. Sampled softmax is one solution -->
 
@@ -281,7 +278,6 @@ _paginate: skip
 - It feels like cheating, but this involves feeding the **correct output** to the decoder at each time step
 - This speeds up training and can improve performance
 - Avoids the whole backpropagation through time thing and makes training of RNNs parallelizable
-- :question: How would this work with LSTM/GRU cells?
 - :question: What are the implications at inference time?
 
 ---
