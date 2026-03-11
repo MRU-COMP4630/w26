@@ -21,7 +21,7 @@
 - [3. Gradient Descent](tutorials/03-gradient-descent/README.md)
 - [4. Backpropagation](tutorials/04-mlp/README.md)
 - [5. Intro to PyTorch](tutorials/05-pytorch/README.md)
-- [6. Project Pitch Presentations](#)
+- [6. Project Pitch Presentations]()
 - [7. Recurrent Neural Networks](tutorials/07-rnn/README.md)
 
 --- 

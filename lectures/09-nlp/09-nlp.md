@@ -38,8 +38,8 @@ Charlotte Curtis
 
     > ["The", "cat", "sat", "on", "the", "mat", "."]
 
-- :question: what other ways could we tokenize this sentence?
-- :question: what about punctuation, capitalization, etc.?
+- ❓ what other ways could we tokenize this sentence?
+- ❓ what about punctuation, capitalization, etc.?
 
 ---
 
@@ -57,8 +57,8 @@ Charlotte Curtis
 - In practice this tends to get stuck in loops:
     Input: `"to be or not"`
     Output: `"to be or not to be or not to be or not..."`
-- :question: how might we avoid this?
-- :question: could we just predict the next whole word instead?
+- ❓ how might we avoid this?
+- ❓ could we just predict the next whole word instead?
 
 ---
 
@@ -104,7 +104,7 @@ Charlotte Curtis
 
 - Each of these conditional probabilities can be estimated from the frequency of the $n$-grams in a **corpus**
 - The most likely next word is the one with the highest probability
-- :question: What are some limitations of this approach?
+- ❓ What are some limitations of this approach?
 
 ---
 
@@ -115,7 +115,7 @@ Charlotte Curtis
 - Also subject to the **curse of dimensionality**
     - Vocabulary $\mathbb{V}$ with size $|\mathbb{V}|$ leads to $|\mathbb{V}|^n$ possible $n$-grams
     - Most $n$-grams will not be present in the corpus!
-- :question: Can you think of an $n$-gram modification that could help this problem?
+- ❓ Can you think of an $n$-gram modification that could help this problem?
 
 ---
 
@@ -132,7 +132,7 @@ Charlotte Curtis
 ## Word embeddings
 
 - Alternative solution: represent individual words as vectors, or **embeddings**
-- :question: How are these embeddings defined?
+- ❓ How are these embeddings defined?
 
     <div class="columns">
 
@@ -194,9 +194,9 @@ _paginate: skip
 ## Back to RNNs
 - RNNs predict the future based on the past
 - This is exactly what we want for predicting stock prices, weather, etc
-- :question: What about translating a sentence from one language to another?
+- ❓ What about translating a sentence from one language to another?
     > Time flies like an arrow; fruit flies like a banana.
-- :question: Can you think of a way to get RNNs to see the future?
+- ❓ Can you think of a way to get RNNs to see the future?
 
 ---
 
@@ -220,7 +220,7 @@ _paginate: skip
 ## Pretraining
 - Embeddings like Word2Vec have been trained on large corpora
 - Surely this provides a great starting point for our models!
-    - :question: what are some potential drawbacks?
+    - ❓ what are some potential drawbacks?
 - [ELMo](https://allennlp.org/elmo) was introduced in 2018 specifically to address the limitations of Word2Vec and GloVe (another popular embedding)
 
 <div style="font-size: 0.8em">
@@ -238,7 +238,7 @@ _paginate: skip
   - `"This warm weather is enjoyable"`
   - `"This", "warm", "weath", "er", "is", "enjoy", "able"`
 - [Byte Pair Encoding](https://en.wikipedia.org/wiki/Byte_pair_encoding) is the most common subword tokenization method, used by GPT and [BERT](https://arxiv.org/abs/1810.04805)
-- :question: What are some advantages of subword tokenization?
+- ❓ What are some advantages of subword tokenization?
 
 ---
 
@@ -252,7 +252,7 @@ _paginate: skip
 | I would prefer an honorable death | Preferiría una muerte honorable | 
 | I have never eaten a mango before | Nunca he comido un mango |
 
-- :question: What kind of challenges can you think of?
+- ❓ What kind of challenges can you think of?
 
 <!-- Challenges: different word order and length, special characters, grammar, idioms, etc -->
 <!-- Approach: Intermediate representation -->
@@ -278,7 +278,7 @@ _paginate: skip
 - It feels like cheating, but this involves feeding the **correct output** to the decoder at each time step
 - This speeds up training and can improve performance
 - Avoids the whole backpropagation through time thing and makes training of RNNs parallelizable
-- :question: What are the implications at inference time?
+- ❓ What are the implications at inference time?
 
 ---
 

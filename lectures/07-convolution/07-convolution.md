@@ -72,7 +72,7 @@ How many doses do we need on each day?
 
 - Typically there is a small **kernel** that is convolved with the input
 - This is just the smaller of the two functions in the convolution
-- :question: What happens at the edges of the input?
+- ❓ What happens at the edges of the input?
 
 ![center](https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif)
 
@@ -94,9 +94,9 @@ $$\frac{1}{9}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{bmatrix}$$
 </div>
 
 - Sizes are commonly chosen to be 3x3, 5x5, 7x7, etc.
-- :question: Why divide by 9?
-- :question: Why odd sizes?
-- :question: What effect do you think these kernels will have on an image?
+- ❓ Why divide by 9?
+- ❓ Why odd sizes?
+- ❓ What effect do you think these kernels will have on an image?
 
 </div>
 
@@ -128,7 +128,7 @@ $$\frac{1}{9}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{bmatrix}$$
 - In the frequency domain, convolution is simply element-wise multiplication
 - This allows for some efficient operations such as blurring/sharpening an image, as well as some fancy stuff like **deconvolution**
 - Sharp edges in space become **ringing** in frequency, and vice versa
-- :question: why do CNNs operate in the spatial domain?
+- ❓ why do CNNs operate in the spatial domain?
 
 ---
 
@@ -145,8 +145,8 @@ $$\frac{1}{9}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{bmatrix}$$
 ## Why CNNs?
 - A fully connected network has a 1:1 mapping of weights to inputs
 - Fine for MNIST (28x28) pixels, but quickly grows out of control
-- :question: If you train a (fully connected) network on 100x100 images, how would you infer on 200x200 images?
-- :question: What if an object is shifted, rotated, or flipped within the image?
+- ❓ If you train a (fully connected) network on 100x100 images, how would you infer on 200x200 images?
+- ❓ What if an object is shifted, rotated, or flipped within the image?
   ![h:200 center](../figures/07-bluey-shift.svg) 
 
 <footer>Bluey image used without permission from <a href="https://www.bluey.tv/">bluey.tv</a></footer>
@@ -201,7 +201,7 @@ $$\frac{1}{9}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{bmatrix}$$
 
   ![center h:300](../figures/07-pooling.png)
 
-- :question: Why would we want to downsample?
+- ❓ Why would we want to downsample?
 
 <footer>Figure from <a href="https://librarysearch.mtroyal.ca/discovery/fulldisplay?context=L&vid=01MTROYAL_INST:02MTROYAL_INST&search_scope=MRULibrary&isFrbr=true&tab=MRULibraryResources&docid=alma9923265933604656">Scikit-learn book</a></footer>
 

@@ -5,9 +5,9 @@
 | 1   | [Proposal](1-proposal.html) | Feb 27<br> Pitch Presentation in lab on March 2 | 15%                 |
 | 2   | [Checkpoint 1](2-checkpoint.html)                | March 27                                        | 20%                 |
 | 2   | Checkpoint 2                | April 13                                        | 20%                 |
-| 4   | Final Report                | April 24<br> Presentations on April 22 or 23*   | 45%                 |
+| 4   | Final Report                | April 24<br> Presentations on April 22*   | 45%                 |
 
-> *Pending registrar's schedule. Most of your project should be complete for the presentation, but you can put finishing touches on your report in the days afterwards.
+> *I asked the registrar to schedule a block of time during final exams for you to share the outcomes of your projects, so this shows up on MyMRU as a final exam. You can put finishing touches on your report in the days afterwards.
 
 You may work in teams of 2 or 3. 
 

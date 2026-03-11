@@ -9,6 +9,7 @@ sidebar-header-nav = true
 no-section-label = true
 git-repository-url = "https://github.com/mru-comp4630/w26"
 site-url = "/w26/"
+admonitions = true
 
 [output.html.fold]
 enable = true

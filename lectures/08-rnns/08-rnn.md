@@ -30,7 +30,7 @@ Charlotte Curtis
 
 ## Sequence data
 - So far we've been talking about images, tabular data, and other "static" data
-- :question: What are some examples of sequence data?
+- ❓ What are some examples of sequence data?
 
 <div class="columns">
 
@@ -51,8 +51,8 @@ $$y[n] = \begin{cases} \frac{y[n - 1]}{2} & \text{if } n \text{ is even} \\ 3y[n
 
 As usual, you don't always need a deep learning solution :hammer:
 
-- :question: What is an example of a "naive" approach?
-- :question: What are some limitations of naive approaches?
+- ❓ What is an example of a "naive" approach?
+- ❓ What are some limitations of naive approaches?
 
 ---
 
@@ -79,9 +79,9 @@ As usual, you don't always need a deep learning solution :hammer:
 
 <div class="columns">
 
-- :question: Are there any obvious trends in the data?
-- :question: What about non-obvious trends?
-- :question: How might this dataset be treated differently from the previous one?
+- ❓ Are there any obvious trends in the data?
+- ❓ What about non-obvious trends?
+- ❓ How might this dataset be treated differently from the previous one?
 
 ![](../figures/08-glenmore_traffic.png)
 
@@ -106,9 +106,9 @@ As usual, you don't always need a deep learning solution :hammer:
     $$\mathbf{\hat{y}}_t = f(\mathbf{W}_x^T \mathbf{x}_t + \mathbf{W}_{\hat{y}}^T \mathbf{\hat{y}}_{t-1} + \mathbf{b})$$
     where $f$ is the activation function and $\mathbf{W}_x$ and $\mathbf{W}_{\hat{y}}$ are weight matrices
 - "Backpropagation through time" (BPTT) is exactly the same as regular backpropagation through the **unrolled** network
-- :question: What kind of issues might arise during training?
-- :question: What are some limitations of this approach?
-- :question: How can we deal with $\mathbf{y}_{t-1}$ for $t = 0$?
+- ❓ What kind of issues might arise during training?
+- ❓ What are some limitations of this approach?
+- ❓ How can we deal with $\mathbf{y}_{t-1}$ for $t = 0$?
 
 ---
 
@@ -127,8 +127,8 @@ As usual, you don't always need a deep learning solution :hammer:
 
 ## Activation Functions for RNNs
 - The default activation function in tensorflow/PyTorch is `tanh`
-- :question: What is different about RNNs that might influence the choice of activation function?
-- :question: How might we normalize sequence data?
+- ❓ What is different about RNNs that might influence the choice of activation function?
+- ❓ How might we normalize sequence data?
 
 ---
 
@@ -237,6 +237,6 @@ _paginate: skip
     - Multi-modal understanding (text, images, audio, video)
     - Long-context reasoning (millions of tokens)
     - Agentic behaviour: tool use, planning, and self-correction
-- :question: If transformers have replaced RNNs, why are we still studying them?
+- ❓ If transformers have replaced RNNs, why are we still studying them?
 
 <footer>This slide written by GitHub Copilot in Winter 2026</footer>

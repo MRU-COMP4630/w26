@@ -53,7 +53,7 @@ Charlotte Curtis
 - **Vanishing/exploding gradients** are where the gradients become near zero or near infinity as they are propagated back through the network
 - Particularly problematic for **recurrent** neural networks, where the same weights are multiplied by themselves repeatedly
 - Also a problem for very deep networks, and part of the reason that deep learning was not popular until the 2010s
-- :question: What changed?
+- ❓ What changed?
 
 ---
 
@@ -88,7 +88,7 @@ Charlotte Curtis
 - This is simply a normalization **at each layer**, shifting and scaling the inputs to have a mean of 0 and a variance of 1 (across the batch)
 - A **moving average** of the mean and variance is maintained **during training**, and used for normalization during inference
 - It also ends up acting as **regularization**, magic!
-- :question: Why wouldn't you want to use batch normalization?
+- ❓ Why wouldn't you want to use batch normalization?
 
 ---
 
@@ -96,7 +96,7 @@ Charlotte Curtis
 - In early works, the sigmoid or tanh functions were popular
 - Both have a small range of non-zero gradients
 - ReLU has a stable gradient for positive inputs, but can lead to the **dying ReLU** problem whereby certain neurons are "turned off"
-- :question: How can we prevent dying ReLUs?
+- ❓ How can we prevent dying ReLUs?
 
 <div data-marpit-fragment>
 
