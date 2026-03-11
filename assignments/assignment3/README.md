@@ -1,7 +1,7 @@
 # Assignment 3: Classification of Text Data
 Due March ~~20~~ 27, 2026
 
-You may work in teams up to 3. Click [here]() to create your team on GitHub Classroom.
+You may work in teams up to 3. Click [here](https://classroom.github.com/a/RrRSlXrr) to create your team on GitHub Classroom.
 
 ## Overview
 The purpose of this assignment is to further your hands-on experience in neural networks with a new type of data: text! 
