@@ -12,6 +12,7 @@
 - [7. Convolutional Neural Networks](lectures/07-convolution/07-convolution.md)
 - [8. Recurrent Neural Networks](lectures/08-rnns/08-rnn.md)
 - [9. Natural Language Processing](lectures/09-nlp/09-nlp.md)
+- [10. Transformers](lectures/10-transformers/10-transformers.md)
 
 ---
 
@@ -23,6 +24,7 @@
 - [5. Intro to PyTorch](tutorials/05-pytorch/README.md)
 - [6. Project Pitch Presentations]()
 - [7. Recurrent Neural Networks](tutorials/07-rnn/README.md)
+- [8. Assignment 2 "competition" results]()
 
 --- 
 
