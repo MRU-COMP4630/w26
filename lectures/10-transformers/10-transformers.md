@@ -150,6 +150,19 @@ where $e_{ti}$ is the **alignment score** or **energy** between the decoder hidd
 
 ---
 
+## Other positional encodings
+
+- [Appendix D](https://ageron.github.io/homlp/HOMLP_Appendix_D.pdf) of the new version of Hands-on Machine Learning goes into detail about positional encodings, particularly for very long sequences
+- Sinusoidal encoding is no longer used in favour of **relative** approaches
+    - Introduces locality bias
+    - Removes early-token bias
+- Example: learnable bias $b_{i - j}$ for position $i,j$ in $\mathbf{QK^T}$, clamped to a max
+- Only $2 r_{max} - 1$ bias terms to learn, regardless of sequence length
+ 
+<!-- All training sequences contain early tokens, only some longer ones contain later tokens. The transformer will be "distracted" by far away tokens. -->
+
+---
+
 ## Interpretability
 ![bg right fit](../figures/10-attention-viz.png)
 
@@ -178,7 +191,7 @@ where $e_{ti}$ is the **alignment score** or **energy** between the decoder hidd
     nlp = pipeline("sentiment-analysis") # for example
     nlp("Cats are fickle creatures")
     ```
-- Hugging Face models can be fine-tuned on your own data, but for that you'll need to use the [`transformers`](https://huggingface.co/transformers/) library
+- Hugging Face models can also be fine-tuned on your own data
 
 ---
 
