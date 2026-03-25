@@ -58,7 +58,7 @@ How many doses do we need on each day?
 
 ## Convolution in 2D
 - Extending to 2D basically adds another summation/integration:
-  $$\begin{aligned}(f * g)[n, m] =& \sum_{i=-\infty}^{\infty}\sum_{j=-\infty}^{\infty} f[i, j]g[n-i, m-j]\\
+  $$\begin{aligned}(f * g)[n, m] =& \sum_{i=0}^{n}\sum_{j=0}^{m} f[i, j]g[n-i, m-j]\\
   (f * g)(x, y) =& \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(u, v)g(x-u, y-v)dudv\end{aligned}$$
 - This can also be extended to higher dimensions
 - Caution: a **colour image** is a 3D array, not a 2D array
