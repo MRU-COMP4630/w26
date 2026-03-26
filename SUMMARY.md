@@ -14,6 +14,7 @@
 - [9. Natural Language Processing](lectures/09-nlp/09-nlp.md)
 - [10. Transformers](lectures/10-transformers/10-transformers.md)
 - [11. Reinforcement Learning](lectures/11-reinforcement/11-reinforcement_learning.md)
+- [12. Ethics Discussion]()
 
 ---
 
@@ -27,6 +28,7 @@
 - [7. Recurrent Neural Networks](tutorials/07-rnn/README.md)
 - [8. Assignment 2 "competition" results]()
 - [9. Applied transformers](tutorials/09-transformers/README.md)
+- [10. Open work time]()
 
 --- 
 
