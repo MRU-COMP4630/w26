@@ -14,7 +14,7 @@
 - [9. Natural Language Processing](lectures/09-nlp/09-nlp.md)
 - [10. Transformers](lectures/10-transformers/10-transformers.md)
 - [11. Reinforcement Learning](lectures/11-reinforcement/11-reinforcement_learning.md)
-- [12. Ethics Discussion]()
+- [12. Ethics Discussion](lectures/12-genai-ethics/12-ethics.md)
 
 ---
 
