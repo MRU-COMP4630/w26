@@ -41,7 +41,7 @@ Costs* of:
 
 ---
 
-![bg fit](image.png)
+![bg fit](../figures/12-agentic-workflow.png)
 
 <footer>Source: <a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf">Anthropic</a></footer>
 
