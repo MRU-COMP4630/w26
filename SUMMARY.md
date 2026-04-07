@@ -30,7 +30,7 @@
 - [8. Assignment 2 "competition" results]()
 - [9. Applied transformers](tutorials/09-transformers/README.md)
 - [10. Open work time]()
-- [11. Checkpoint Presentations]()
+- [11. Checkpoint Presentations](final_project/3-checkpoint.md)
 
 --- 
 
