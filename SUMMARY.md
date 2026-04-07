@@ -44,4 +44,4 @@
     - [1. Proposal](final_project/1-proposal.md)
     - [2. Checkpoint 1](final_project/2-checkpoint.md)
     - [3. Checkpoint 2](final_project/3-checkpoint.md)
-    - [4. Final Report]()
+    - [4. Final Report](final_project/4-final-report.md)
