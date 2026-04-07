@@ -15,6 +15,7 @@
 - [10. Transformers](lectures/10-transformers/10-transformers.md)
 - [11. Reinforcement Learning](lectures/11-reinforcement/11-reinforcement_learning.md)
 - [12. Ethics Discussion](lectures/12-genai-ethics/12-ethics.md)
+- [13. Random extras](lectures/13-extra/13-random-extras.md)
 
 ---
 
@@ -29,6 +30,7 @@
 - [8. Assignment 2 "competition" results]()
 - [9. Applied transformers](tutorials/09-transformers/README.md)
 - [10. Open work time]()
+- [11. Checkpoint Presentations]()
 
 --- 
 
