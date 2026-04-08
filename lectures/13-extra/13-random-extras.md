@@ -30,6 +30,22 @@ Charlotte Curtis
 
 ---
 
+## But first, some housekeeping
+
+- Assignment 3 stuff
+    ```python
+    class SomeModel(nn.Module):
+        def __init__(self):
+            super(SomeModel, self).__init__()
+
+            self.bert = transformers.BertModel.from_pretrained("bert-base-uncased")
+            self.out = nn.Linear(self.bert.config.hidden_size, 1)
+    ```
+- Final checkpoint and report
+- Journal club participation grade
+
+---
+
 ## Object Detection
 
 <div class="columns">
